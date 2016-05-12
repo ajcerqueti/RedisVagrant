@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+bootstrap.sh text eol=lf
+redis.init.d text eol=lf
+redis.conf text eol=lf
