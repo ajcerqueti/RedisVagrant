@@ -26,5 +26,7 @@ echo "Copying configs..."
 sudo cp -u /vagrant/redis.conf /etc/redis/6379.conf
 
 echo "Add service"
-sudo ln -s /vagrant/redis.service /etc/systemd/system/redis.service
-sudo service start redis
+sudo cp -u /vagrant/redis.service /etc/systemd/system/redis.service
+sudo systemctl start redis
+sudo systemctl enable redis
+
