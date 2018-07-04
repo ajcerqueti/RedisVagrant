@@ -22,10 +22,9 @@ sudo mkdir /var/redis
 sudo chmod -R 777 /var/redis
 sudo useradd redis
 
+echo "Copying configs..."
 sudo cp -u /vagrant/redis.conf /etc/redis/6379.conf
-sudo cp -u /vagrant/redis.init.d /etc/init.d/redis_6379
 
-sudo update-rc.d redis_6379 defaults
-
-sudo chmod a+x /etc/init.d/redis_6379
-sudo /etc/init.d/redis_6379 start
+echo "Add service"
+sudo ln -s /vagrant/redis.service /etc/systemd/system/redis.service
+sudo service start redis
